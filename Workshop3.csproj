@@ -51,6 +51,7 @@
     <Compile Include="model\Player.cs" />
     <Compile Include="model\rules\AmericanNewGameStrategy.cs" />
     <Compile Include="model\rules\BasicHitStrategy.cs" />
+    <Compile Include="model\rules\SoftSeventeenHitStrategy.cs" />
     <Compile Include="model\rules\IHitStrategy.cs" />
     <Compile Include="model\rules\INewGameStrategy.cs" />
     <Compile Include="model\rules\InternationalNewGameStrategy.cs" />
