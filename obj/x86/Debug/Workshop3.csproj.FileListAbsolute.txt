@@ -1,0 +1,6 @@
+c:\users\toubic\documents\visual studio 2010\Projects\Workshop3\Workshop3\bin\Debug\Workshop3.exe
+c:\users\toubic\documents\visual studio 2010\Projects\Workshop3\Workshop3\bin\Debug\Workshop3.pdb
+c:\users\toubic\documents\visual studio 2010\Projects\Workshop3\Workshop3\obj\x86\Debug\Workshop3.exe
+c:\users\toubic\documents\visual studio 2010\Projects\Workshop3\Workshop3\obj\x86\Debug\Workshop3.pdb
+C:\Users\Toubic\Documents\Visual Studio 2010\Projects\Workshop3\Workshop-3-Design-U-Patterns\obj\x86\Debug\Workshop3.exe
+C:\Users\Toubic\Documents\Visual Studio 2010\Projects\Workshop3\Workshop-3-Design-U-Patterns\obj\x86\Debug\Workshop3.pdb
