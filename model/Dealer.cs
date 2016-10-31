@@ -14,7 +14,6 @@ namespace BlackJack.model
         private rules.IHitStrategy m_hitRule;
         private rules.IWinStrategy m_winRule;
 
-
         public Dealer(rules.RulesFactory a_rulesFactory)
         {
             m_newGameRule = a_rulesFactory.GetNewGameRule();
@@ -24,6 +23,7 @@ namespace BlackJack.model
 
         public bool NewGame(Player a_player)
         {
+
             if (m_deck == null || IsGameOver())
             {
                 m_deck = new Deck();
@@ -31,6 +31,7 @@ namespace BlackJack.model
                 a_player.ClearHand();
                 return m_newGameRule.NewGame(m_deck, this, a_player);   
             }
+
             return false;
         }
 
@@ -67,6 +68,7 @@ namespace BlackJack.model
 
         public bool IsDealerWinner(Player a_player)
         {
+
             if (a_player.CalcScore() > g_maxScore)
             {
                 return true;

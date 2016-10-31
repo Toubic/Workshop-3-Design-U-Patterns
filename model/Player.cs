@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
+using BlackJack.observer;
 
 namespace BlackJack.model
 {
-    class Player
+    class Player : IObserver
     {
         private List<Card> m_hand = new List<Card>();
 
@@ -57,6 +59,11 @@ namespace BlackJack.model
             }
 
             return score;
+        }
+        public void notifyNewCard(){
+            GetHand();
+            Thread.Sleep(800);
+            
         }
     }
 }

@@ -60,5 +60,13 @@ namespace BlackJack.model
         {
             return m_player.CalcScore();
         }
+        public List<Player> getPlayers()
+        {
+            List <Player> players = new List<Player>();
+            players.Add(m_dealer);
+            players.Add(m_player);
+
+            return players;
+        }
     }
 }
