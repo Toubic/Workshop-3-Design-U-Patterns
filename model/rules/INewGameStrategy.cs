@@ -9,6 +9,6 @@ namespace BlackJack.model.rules
     {
         bool NewGame(Deck a_deck, Dealer a_dealer, Player a_player);
 
-        void getShowDealCard(Deck a_deck, Player a_player);
+        void getShowDealCard(Deck a_deck, Player a_player, bool show);
     }
 }
