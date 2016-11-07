@@ -8,6 +8,10 @@ namespace BlackJack.controller
 {
     class PlayGame : model.IObserver
     {
+        private const char play = 'p';
+        private const char hit = 'h';
+        private const char stand = 's';
+        private const char quit = 'q';
 
         public bool Play(model.Game a_game, view.IView a_view)
         {
@@ -26,20 +30,20 @@ namespace BlackJack.controller
             }
 
             switch(a_view.GetInput()){
-                case 'p':
+                case play:
                     foreach (model.Player obs in a_game.getPlayers())
                     {
                         obs.addObserver(this);
                     }
                     a_game.NewGame();
                     break;
-                case 'h':
+                case hit:
                     a_game.Hit();
                     break;
-                case 's':
+                case stand:
                     a_game.Stand();
                     break;
-                case 'q':
+                case quit:
                     return false;
                 default:
                     return true;
