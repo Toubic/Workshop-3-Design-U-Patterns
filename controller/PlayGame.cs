@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 
 namespace BlackJack.controller
 {
-    class PlayGame
+    class PlayGame : model.IObserver
     {
-        private subject.NewCard newCard = new subject.NewCard();
 
         public bool Play(model.Game a_game, view.IView a_view)
         {
@@ -18,23 +18,23 @@ namespace BlackJack.controller
 
             if (a_game.IsGameOver())
             {
-                foreach (observer.IObserver obs in a_game.getPlayers())
+                foreach (model.Player obs in a_game.getPlayers())
                 {
-                    newCard.removeObserver(obs);
+                    obs.removeObserver(this);
                 }
                 a_view.DisplayGameOver(a_game.IsDealerWinner());
             }
 
             switch(a_view.GetInput()){
                 case 'p':
-                    foreach(observer.IObserver obs in a_game.getPlayers()){
-                        newCard.addObserver(obs);
+                    foreach (model.Player obs in a_game.getPlayers())
+                    {
+                        obs.addObserver(this);
                     }
                     a_game.NewGame();
                     break;
                 case 'h':
                     a_game.Hit();
-                    newCard.notifyAll();
                     break;
                 case 's':
                     a_game.Stand();
@@ -46,6 +46,10 @@ namespace BlackJack.controller
             }
 
             return true;
+        }
+        public void notifyNewCard()
+        {
+            Thread.Sleep(500);
         }
     }
 }

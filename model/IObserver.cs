@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace BlackJack.observer
+namespace BlackJack.model
 {
     public interface IObserver
     {

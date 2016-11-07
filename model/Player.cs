@@ -2,18 +2,38 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading;
-using BlackJack.observer;
 
 namespace BlackJack.model
 {
-    class Player : IObserver
+    class Player
     {
         private List<Card> m_hand = new List<Card>();
+        private List<IObserver> observers = new List<IObserver>();
+
+        public void addObserver(IObserver observer)
+        {
+            observers.Add(observer);
+        }
+
+        public void removeObserver(IObserver observer)
+        {
+            observers.Remove(observer);
+        }
+
+        public void notifyAll()
+        {
+            foreach (IObserver observer in observers)
+            {
+                observer.notifyNewCard();
+            }
+
+        }
+
 
         public void DealCard(Card a_card)
         {
             m_hand.Add(a_card);
+            notifyAll();
         }
 
         public IEnumerable<Card> GetHand()
@@ -59,11 +79,6 @@ namespace BlackJack.model
             }
 
             return score;
-        }
-        public void notifyNewCard(){
-            GetHand();
-            Thread.Sleep(800);
-            
         }
     }
 }
